@@ -8,3 +8,6 @@ class item(models.Model):
     item_price = models.IntegerField()
     #create superuser on  monday
     
+    def __str__(self):
+        return self.item_name
+    
