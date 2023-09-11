@@ -13,10 +13,12 @@
         <ul>
 
             <li>
-            {{ item.id }} -- {{item.item_name}}
-            </li>    
+                <a href="/food/detail/{{ item.id }}/">
+                {{ item.id }} -- {{item.item_name}}
+                </a> 
+        </li>    
         </ul>   
-      
+       
 
     {% endfor %}
 </body>
