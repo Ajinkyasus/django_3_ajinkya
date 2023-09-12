@@ -12,13 +12,35 @@
 
 </head>
 <body>
-    <h1>This is the start of base.html page</h1>
+   
+    
+    <nav class="navbar navbar -dark bg-dark">
+        <a href="{% url 'food:index' %}" class="navbar-brand">
+            Exortilo
 
+        </a>
+        <div class="navbar">
+            <a href="#" class="nav-item nav-link btn btn-dark">
+                ADD Item
+
+            </a> 
+            <a href="#" class="nav-item nav-link btn btn-dark">
+                PROFILE
+
+            </a>
+            <a href="#" class="nav-item nav-link btn btn-dark">
+                Sign up
+
+            </a>           
+
+        </div>        
+
+    </nav> 
 
     {% block body %}
     {% endblock %}
 
-    <h1>this is the End of base.html page</h1>
+  
 
 
 
