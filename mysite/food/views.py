@@ -5,7 +5,7 @@ from food.models import Item
 
 # Create your views here.
 def index(request):
-    itemlist = Item.objects.all()
+    itemlist = Item.objects.all() 
     context={
         'itemlist':itemlist
     }
