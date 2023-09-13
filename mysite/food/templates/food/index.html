@@ -40,14 +40,14 @@
             >
                 {{ item.item_desc | truncatewords:6 }}
             </h5>
-            <h6>
+            <h6 style="font-style:italic">
                 ${{ item.item_price}}
             </h6>
-            <h6>
-                Added for:
+            <h6 style="font-style:italic">
+                Added for:{{ item.for_user }}
             </h6>
-            <h6>
-                Added By Superuser:
+            <h6 style="font-style:italic">
+                Added By Superuser: admin
             </h6>
             
         </div> 
