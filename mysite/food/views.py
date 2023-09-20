@@ -25,6 +25,7 @@ def detail(request, item_id):
 
 def create_item(request):
     form = ItemForm(request.POST or None)
+    print(1)
 
     if form.is_valid():
         form.save()

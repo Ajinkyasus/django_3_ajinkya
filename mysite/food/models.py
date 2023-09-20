@@ -11,7 +11,7 @@ class Item(models.Model):
     item_name = models.CharField(max_length=500)
     item_desc = models.CharField(
         max_length=500,
-        default="Conubia sem netus ad convallis proin. Nam lobortis ad justo inceptos vehicula sapien rhoncus rhoncus? Vel pellentesque ut taciti gravida hac sociis hendrerit semper platea penatibus fusce sociis. Quis eros dapibus phasellus vulputate. Ultricies nascetur integer dignissim dolor euismod mus! Blandit urna vehicula in varius vestibulum himenaeos? Litora pellentesque aliquam urna vulputate est. Pellentesque senectus laoreet habitant. Aliquet quis vestibulum turpis. Etiam bibendum, nisl sociis ut montes duis id eleifend condimentum etiam. Semper."
+        default="Conubia sem netus ad convallis proin. Nam lobortis ad justo inceptos vehicula sapien rhoncus rhoncus? Vel pellentesque ut taciti gravida hac sociis hendrerit semper platea penatibus fusce sociis. Quis eros dapibus phasellus vulputate."
         )
     item_price = models.IntegerField()
     item_image = models.CharField(
