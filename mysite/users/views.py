@@ -34,6 +34,10 @@ def login_view(request):
         
         if user is not None:
             login(request,user)
+            messages.warning(
+                request,
+                'welcome {},You have successfully logged in'.format(request.user.username)
+            )
             return redirect('food:index')
     
     
@@ -43,6 +47,10 @@ def login_view(request):
     return render(request,'users/login.html',context)    
 
 def logout_view(request):
+    messages.warning(
+        request,
+        '{},You have successfully logged out'.format(request.user.username)
+    )
     logout(request)
     return redirect ('food:index')
    
