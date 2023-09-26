@@ -11,10 +11,10 @@ def register(request):
         
         if form.is_valid():
             username = form.cleaned_data.get('username')
-            messages.success(request,'Welcome {},Your Account has been succesfully created'.format(username))
+            messages.success(request,'Welcome {},Your Account has been succesfully created.Now you may log in'.format(username))
             
             form.save()
-            return redirect('food:index')
+            return redirect('login')
         
     else:
         form = RegisterForm()
