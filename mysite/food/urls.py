@@ -6,9 +6,9 @@ app_name ="food"
 
 urlpatterns = [
     # function based index view.
-    # path('index/', views.index, name='index'),
+    path('index/', views.index, name='index'),
     # class based index view
-    path('index/',views.IndexClassView.as_view(),name='index'),
+    # path('index/',views.IndexClassView.as_view(),name='index'),
     
     
     #function based detail view    
