@@ -8,6 +8,7 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
 
+
 # function based index view.
 def index(request):
     if request.user.is_superuser:
