@@ -6,7 +6,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-
+from food.models import History
 
 
 # function based index view.
@@ -82,6 +82,20 @@ class CreateItem(CreateView):
     
     def form_valid(self,form):
         form.instance.user = self.request.user
+        
+        obj_History = History(
+            user_name = self.request.user.username,
+            prod_ref = form.instance.prod_code,
+            item_name = self.request.POST.get('item_name'),   #form.instance.item_name
+            op_type = 'Created'
+            
+            
+            
+        )
+        obj_History.save()
+        
+        
+        
         return super().form_valid(form)
 
 # function based update_item view
