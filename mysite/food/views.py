@@ -110,11 +110,25 @@ def update_item(request,id):
     
     if form.is_valid():
         form.save()
+        
+        obj_History = History(
+            user_name = request.user.username,
+            prod_ref = form.instance.prod_code,
+            item_name = request.POST.get('item_name'),   #form.instance.item_name
+            op_type = 'Updated'
+            
+            
+            
+        )
+        obj_History.save()
         return redirect('food:index')
     
     
     
     return render(request,'food/item-form.html',context)
+
+#class based update_item view
+
 
 # function based delete_item view
 
