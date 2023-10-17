@@ -138,9 +138,23 @@ def delete_item(request,id):
     
     context = {
         'item':item
-    }  
+    }
+    
+      
     
     if request.method=='POST':
+        
+        obj_History = History(
+            user_name = request.user.username,
+            prod_ref = item.prod_code,
+            item_name = item.item_name,   #form.instance.item_name
+            op_type = 'deleted'
+            
+            
+            
+        )
+        obj_History.save()
         item.delete()
+    
         return redirect ('food:index')
     return render(request,'food/item-delete.html', context)
