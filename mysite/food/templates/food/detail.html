@@ -98,8 +98,10 @@
     </div>
 </div>
 
+{% if user.is_authenticated %}
+    {% if user.profile.user_type == 'Rest' or user.profile.user_type == 'Admin' %}
 
-{% for obj in hist %}
+    {% for obj in hist %}
 
     <div
     class="row mb-1">
@@ -139,5 +141,14 @@
 
     </div>    
 {% endfor %}
+
+    
+
+    {% endif %}
+
+{% endif %}
+
+
+
 
 {% endblock %}
