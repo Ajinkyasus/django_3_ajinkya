@@ -45,7 +45,24 @@ def detail(request, item_id):
     hist = History.objects.filter(
         prod_ref = item.prod_code
     )
-    obj_Cusord = CusOrders.objects.all()
+    
+    #restraurant and admin
+    if request.user.profile.user_type == 'Rest' or request.user.profile.user_type == 'Admin':
+        obj_Cusord = CusOrders.objects.filter(
+            prod_code = item.prod_code
+            
+        )
+    
+    elif request.user.profile.user_type =='Cust' :
+        obj_Cusord = CusOrders.objects.filter(
+            prod_code = item.prod_code,
+            user = request.user.username
+        )
+    
+    # else:
+    #     obj_Cusord = CusOrders.objects.filter(
+    #         prod_code = item.prod_code,
+    #     )   
     
     context = {
         
