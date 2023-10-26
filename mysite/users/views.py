@@ -96,7 +96,7 @@ def Orders(request,id,pdcd,user):
         )
         obj_Cusords.save()
         return redirect('food:detail', item_id=id)
-    return render(request, 'users  /orders.html',context)
+    return render(request, 'users/orders.html',context)
 
    
     
