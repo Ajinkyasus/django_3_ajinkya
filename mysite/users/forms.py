@@ -12,7 +12,9 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ['username','email','first_name','last_name','password1','password2']
         
-          
+class CusOrdersUpd(forms.ModelForm):
     class Meta:
         model = CusOrders
-        fields = ['order_id','prod_code','quantity','user']        
+        fields = ['quantity']        
+
+ 
