@@ -7,7 +7,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from food.models import History
-from users.models import CusOrders
+from users.models import CusOrders, CusRatingFeedback
 
 
 # function based index view.
@@ -59,16 +59,16 @@ def detail(request, item_id):
             user = request.user.username
         )
     
-    # else:
-    #     obj_Cusord = CusOrders.objects.filter(
-    #         prod_code = item.prod_code,
-    #     )   
-    
+
+    crf = CusRatingFeedback.objects.filter(
+        prod_code=item.prod_code
+    )    
     context = {
         
         'item':item,
         'hist':hist,
-        'oco':obj_Cusord
+        'oco':obj_Cusord,
+        'crf':crf
     }
     
     return render(request, 'food/detail.html', context)
