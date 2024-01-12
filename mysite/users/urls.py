@@ -13,7 +13,16 @@ urlpatterns = [
     path('crf/<int:it_id>/<int:pc>/',views.CusRatFeed, name='CusRatFeed'),
     #updating customer ratings and feedback
     path('crf_upd/<int:details_id>/<int:crf_id>/',views.update_crf, name='upd_crf'),
-    #delete
+    #delete customer ratings and feedback
+    path('del_crf/<int:details_id>/<int:crf_id>/',views.delete_crf,name='del_crf'),
+    # paypal checkout button
+    path('buy/<int:amt>/<int:qnt>/', views.Payment, name='buy'),
+
+    # paypal on approve
+    path('oa/', views.OnApprove, name='oa'),
+
+    # paypal payment success
+    path('ps/', views.PaymentSuccess, name='ps'),
     
     
 ]

@@ -2,44 +2,56 @@
 
 {% block body %}
 
-<br><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-<div class="container">
-   <div class="row">
-    <div class="col-md-4 offset-md-4">
-        <div class="card">
-            <div class="card-header text-white bg-info">
-                <div class="card-title">
-                    Profile
-                </div>    
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="offset-md-1">
-                        <img style="margin-bottom: 15px:" height="100px" width="100px" src="{{ user.profile.image.url }}">
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-                    </div>
-                    <div class="margin-top:20px;" class="offset-md-2">
-                        <span>{{ user.first_name }}</span>
-                        <span>{{ user.last_name}}</span><br>
-                        <span>{{ user.email }}</span>
-                        <p>{{ user.profile.location }}</p>
+        .profile-info {
+            text-align: center;
+        }
 
-                    </div>    
+        .profile-info h1 {
+            margin: 0;
+            color: #333;
+        }
 
+        .profile-info p {
+            color: #666;
+        }
+    </style>
+    <title>Your Profile</title>
+</head>
+<body>
 
-                </div>    
+<div class="profile-container">
+    <div class="profile-info">
+        <h1>{{ user.first_name }}</h1>
+        <p>{{ user.last_name }}</p>
+        <p>{{ user.email }}</p>
+        <p>{{ user.profile.location }}</p>
+    </div>
+</div>
 
-            </div>    
-
-
-        </div>    
-      </div>    
-
-    </div> 
-
-</div>    
-<br><br><br>
+</body>
+</html>
 
 
 
