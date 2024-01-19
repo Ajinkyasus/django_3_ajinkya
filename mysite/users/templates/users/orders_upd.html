@@ -23,6 +23,9 @@
 
                     <br><label> Quantity: </label><br>
                     {{ form.quantity }}
+                    {% for error in form.quantity.errors %}
+						<p class="text-danger">{{ error }}</p>
+					{%endfor%}
 
                     
 
